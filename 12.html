@@ -1,0 +1,28 @@
+<script type="text/javascript">
+var result; datetime1 = new Date();
+
+function numberOfFactors(number) {
+	var numberOfFactors = 0;
+	var sqrtNumber = Math.sqrt(number);
+	for (var i = 1; i <= sqrtNumber; i++) {
+		if (number%i===0) {
+			numberOfFactors+=2;
+		}
+	};
+	return numberOfFactors;
+}
+var total = 1;
+var i = 2;
+var numberOfFators = 0;
+while(numberOfFators<500) {
+	total+=i;
+	numberOfFators = numberOfFactors(total);
+	i++;
+};
+// document.write(total+" => "+numberOfFators+"<br>");
+result = total;
+
+var datetime2 = new Date();
+document.write("<hr><p>Result: " +result+"</p><p>in: "+(datetime2.getTime() - datetime1.getTime())/1000+" secs</p>");
+// 76576500 in 0.35 secs
+</script>

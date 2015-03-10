@@ -1,0 +1,23 @@
+<script type="text/javascript">
+var result, datetime1 = new Date();
+
+/* elegant brute force */
+var i = 2520;
+while (typeof result==="undefined") {
+	var pass = 0;
+	for (var j = 11; j <= 20; j++) {
+		if (i%j===0) {
+			pass++;
+		}
+	}
+	if (pass===10) {
+		result = i;
+		break;
+	}
+	i+=20;
+}
+
+var datetime2 = new Date();
+document.write("<hr><p>Result: " +result+"</p><p>in: "+(datetime2.getTime() - datetime1.getTime())/1000+" secs</p>");
+//232792560 in 1.64 secs
+</script>

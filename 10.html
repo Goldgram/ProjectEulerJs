@@ -1,0 +1,24 @@
+<script type="text/javascript">
+var result; datetime1 = new Date();
+
+function isPrime(num) {
+	var sqrt = Math.sqrt(num);
+	for (var i=3; i <= sqrt; i+=2) {
+		if (num%i===0) {
+			return false;
+		}
+	}
+	return true;
+}
+primeSum = 2;
+for (var i = 3; i < 2000000; i+=2) {
+	if (isPrime(i)) {
+		primeSum += i;
+	}
+}
+result = primeSum;
+
+var datetime2 = new Date();
+document.write("<hr><p>Result: " +result+"</p><p>in: "+(datetime2.getTime() - datetime1.getTime())/1000+" secs</p>");
+// 142913828922 in 0.47 secs
+</script>

@@ -1,0 +1,19 @@
+<script type="text/javascript">
+var result; datetime1 = new Date();
+
+Loops:
+for (var i = 2; i <= 332; i++) {
+	for (var j = i+1; j <= 499; j++) {
+		for (var k = j+1; k <= 997; k++) {
+			if ((i+j+k)===1000 && (i*i)+(j*j)===(k*k)) {
+				result = i*j*k;
+				break Loops;
+			}
+		}
+	}
+}
+
+var datetime2 = new Date();
+document.write("<hr><p>Result: " +result+"</p><p>in: "+(datetime2.getTime() - datetime1.getTime())/1000+" secs</p>");
+//31875000 in 0.11 secs
+</script>

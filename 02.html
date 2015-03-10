@@ -1,0 +1,19 @@
+<script type="text/javascript">
+var result, datetime1 = new Date();
+
+var val1 = 1;
+var val2 = 2;
+var sum = 0;
+while	(val1<4000000) {
+	val2 += val1;
+	val1 = val2 - val1;
+	if (val1%2===0) {
+		sum += val1;
+	}
+}
+result = sum;
+
+var datetime2 = new Date();
+document.write("<hr><p>Result: " +result+"</p><p>in: "+(datetime2.getTime() - datetime1.getTime())/1000+" secs</p>");
+//4613732 in <1 sec
+</script>

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+var result, datetime1 = new Date();
+
+Number.prototype.isPrime = function() {
+	if (this%2===0) {
+		return false;
+	}
+	var sqrt = Math.sqrt(this);
+	for (var i=3; i<=sqrt; i+=2) {
+		if (this%i===0) {
+			return false;
+		}
+	}
+	return true;
+};
+var nth = 1;
+var i = 1;
+while (nth<10001) {
+	i+=2;
+	if (i.isPrime()) {
+		nth++;
+	}
+}
+result = i;
+
+var datetime2 = new Date();
+document.write("<hr><p>Result: " +result+"</p><p>in: "+(datetime2.getTime() - datetime1.getTime())/1000+" secs</p>");
+//104743 in 0.016 secs
+</script>

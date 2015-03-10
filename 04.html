@@ -1,0 +1,20 @@
+<script type="text/javascript">
+var result, datetime1 = new Date();
+
+var highestPalindrome = 0;
+for (var i = 999; i >= 100; i--) {
+	for (var j = 999; j >= 100; j--) {
+		var product = i*j;
+		if ((""+product)===(""+product).split("").reverse().join("")) {
+			if (product>highestPalindrome) {
+				highestPalindrome = product;
+			}
+		}
+	}
+}
+result = highestPalindrome;
+
+var datetime2 = new Date();
+document.write("<hr><p>Result: " +result+"</p><p>in: "+(datetime2.getTime() - datetime1.getTime())/1000+" secs</p>");
+//906609 in 0.35 secs
+</script>

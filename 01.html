@@ -1,0 +1,15 @@
+<script type="text/javascript">
+var result, datetime1 = new Date();
+
+var sum = 0;
+for (var i = 3; i < 1000; i++) {
+	if (i%3===0 || i%5===0) {
+		sum+=i;
+	}
+}
+result = sum;
+
+var datetime2 = new Date();
+document.write("<hr><p>Result: " +result+"</p><p>in: "+(datetime2.getTime() - datetime1.getTime())/1000+" secs</p>");
+//233168 in <1 sec
+</script>

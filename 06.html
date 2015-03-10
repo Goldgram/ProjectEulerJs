@@ -1,0 +1,18 @@
+<script type="text/javascript">
+var result, datetime1 = new Date();
+
+var sumSquares = 0;
+for (var i = 1; i <= 100; i++) {
+	sumSquares += (i*i);
+}
+var squaresSum = 0;
+for (var i = 1; i <= 100; i++) {
+	squaresSum += i;
+}
+squaresSum *= squaresSum;
+result = squaresSum-sumSquares;
+
+var datetime2 = new Date();
+document.write("<hr><p>Result: " +result+"</p><p>in: "+(datetime2.getTime() - datetime1.getTime())/1000+" secs</p>");
+//25164150 in <1 sec
+</script>
